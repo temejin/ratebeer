@@ -6,11 +6,10 @@ class Beer < ApplicationRecord
     if self.ratings.empty?
       return nil
     end
-    sum = 0
+    r = []
     self.ratings.each do |rate|
-      sum += rate.score
+      r << rate.score
     end
-    avg = sum / self.ratings.count
-    return avg.to_f
+    return r.inject(0.0, :+) / r.count
   end
 end
