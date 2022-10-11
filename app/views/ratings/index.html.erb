@@ -3,6 +3,6 @@
 <ul>
   <h3> Total ratings: <%= @ratings.count %> </h3>
   <% @ratings.each do |rating| %>
-    <li> <%= rating %> </li>
+    <li> <%= render rating %> </li>
   <% end %>
 </ul>
