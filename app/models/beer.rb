@@ -12,4 +12,8 @@ class Beer < ApplicationRecord
     end
     return r.inject(0.0, :+) / r.count
   end
+
+  def to_s
+    return "#{self.name} by #{self.brewery.name}"
+  end
 end
