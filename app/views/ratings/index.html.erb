@@ -1,9 +1,9 @@
 <h2>List of ratings</h2>
-<p> <%= link_to 'rate a beer', ratings_new_path %> </p>
+<p> <%= link_to 'rate a beer', new_rating_path %> </p>
 
 <ul>
   <h3> Total ratings: <%= @ratings.count %> </h3>
   <% @ratings.each do |rating| %>
-    <li> <%= render rating %> </li>
+    <li> <%= render rating %> <%= button_to 'delete', rating, method: :delete, form: { data: {'turbo-confirm': 'Are you certain?' } } %> </li>
   <% end %>
 </ul>
