@@ -1,5 +1,5 @@
 class BreweriesController < ApplicationController
-  before_action :set_brewery, only: %i[ show edit update destroy ]
+  before_action :set_brewery, only: %i[show edit update destroy]
   before_action :authenticate, only: [:destroy]
 
   # GET /breweries or /breweries.json
@@ -59,23 +59,23 @@ class BreweriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_brewery
-      @brewery = Brewery.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def brewery_params
-      params.require(:brewery).permit(:name, :year)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_brewery
+    @brewery = Brewery.find(params[:id])
+  end
 
-    private
-    def authenticate
-      admin_accounts = { "pekka" => "beer", "arto" => "foobar", "matti" => "ittam", "vilma" => "kangas" }
-      authenticate_or_request_with_http_basic do |username, password|
-        if admin_accounts[username] == password
-          return true
-        end
+  # Only allow a list of trusted parameters through.
+  def brewery_params
+    params.require(:brewery).permit(:name, :year)
+  end
+
+  def authenticate
+    admin_accounts = { "pekka" => "beer", "arto" => "foobar", "matti" => "ittam", "vilma" => "kangas" }
+    authenticate_or_request_with_http_basic do |username, password|
+      if admin_accounts[username] == password
+        return true
       end
     end
+  end
 end
