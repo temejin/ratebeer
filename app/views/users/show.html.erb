@@ -1,6 +1,17 @@
 <p style="color: green"><%= notice %></p>
+<h2>Username:</h2>
+<%= @user.username %>
+Has made <%= @user.ratings.count %> ratings, average rating <%= @user.average_rating %>
 
-<%= render @user %>
+<ul>
+  <% @user.ratings.each do |rating| %>
+    <% beer = Beer.find_by id: rating.beer_id %>
+    <li><%= beer.name %> <%= rating.score %> <%= link_to 'Delete', rating, data: { "turbo-method": :delete }, class: "link-secondary smooth"  %></li>
+  <% end %>
+</ul>
+
+
+
 
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
