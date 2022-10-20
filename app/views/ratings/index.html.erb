@@ -4,6 +4,6 @@
 <ul>
   <h3> Total ratings: <%= @ratings.count %> </h3>
   <% @ratings.each do |rating| %>
-    <li> <%= render rating %> <%= button_to 'delete', rating, method: :delete, form: { data: {'turbo-confirm': 'Are you certain?' } } %> </li>
+    <li> <%= render rating %> <%= link_to rating.user.username, rating.user %> </li>
   <% end %>
 </ul>
