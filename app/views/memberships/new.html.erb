@@ -2,9 +2,13 @@
 
 <%= form_for(@membership) do |f| %>
 
-  Select a club to join:
-  <%= f.select :beer_club_id, options_from_collection_for_select(@clubs, :id, :to_s) %>
-  <%= f.submit %>
+  <% if !@clubs.empty? %>
+    Select a club to join:
+    <%= f.select :beer_club_id, options_from_collection_for_select(@clubs, :id, :to_s) %>
+    <%= f.submit %>
+  <% else %>
+    No available clubs to join!
+  <% end%>
 <% end %>
 
 <br>

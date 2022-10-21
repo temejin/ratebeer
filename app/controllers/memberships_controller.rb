@@ -13,7 +13,7 @@ class MembershipsController < ApplicationController
   # GET /memberships/new
   def new
     @membership = Membership.new
-    @clubs = BeerClub.all
+    @clubs = BeerClub.all.select {|club| !current_user.clubs.include? club}
   end
 
   # GET /memberships/1/edit
