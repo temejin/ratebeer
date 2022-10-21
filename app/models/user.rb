@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   has_many :ratings
   has_many :beers, through: :ratings
+  has_many :memberships
+  has_many :clubs, through: :memberships, source: :beer_club
 end

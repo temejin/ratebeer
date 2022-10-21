@@ -1,7 +1,16 @@
 <p style="color: green"><%= notice %></p>
 <h2>Username:</h2>
+<p> <%= @user.username %> </p>
+
+<%= @user.username %> is a member of <%= @user.clubs.count %> clubs:
+<ul>
+  <% @user.clubs.each do |c| %>
+    <li> <%= link_to c.name, c %> </li>
+  <%end%>
+</ul>
+
 <%= @user.username %>
-Has made <%= @user.ratings.count %> ratings, average rating <%= @user.average_rating %>
+as made <%= @user.ratings.count %> ratings, average rating <%= @user.average_rating %>
 
 <ul>
   <% @user.ratings.each do |rating| %>
