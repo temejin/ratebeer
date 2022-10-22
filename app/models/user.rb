@@ -5,8 +5,8 @@ class User < ApplicationRecord
 
   validate :validate_password
   validates :username, uniqueness: true,
-                       length: {minimum: 3,
-                                maximum: 30}
+                       length: { minimum: 3,
+                                 maximum: 30 }
 
   def validate_password
     if !password.match('[A-Z]+')
@@ -15,9 +15,7 @@ class User < ApplicationRecord
     if !password.match('\d+')
       errors.add(:password, "must contain at least one number")
     end
-    if password.length < 4
-      errors.add(:password, "must be at least 4 characters long")
-    end
+    errors.add(:password, "must be at least 4 characters long") unless password.length > 4
   end
 
   has_many :ratings, dependent: :destroy

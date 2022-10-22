@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user == current_user
-        if @user.update(user_params) and @user == current_user and @user.update(user_params)
+        if @user.update(user_params) && @user == current_user && @user.update(user_params)
           format.html { redirect_to user_url(@user), notice: "User was successfully updated." }
           format.json { render :show, status: :ok, location: @user }
         else
@@ -52,17 +52,17 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
-    if @user != current_user
-      respond_to do |format|
-        format.html {redirect_to users_url, notice: "Attempting to destroy another user"}
-        format.json {head :no_content}
-      end
-    else
+    if @user == current_user
       @user.destroy
       session[:user_id] = nil
 
       respond_to do |format|
         format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to users_url, notice: "Attempting to destroy another user" }
         format.json { head :no_content }
       end
     end
