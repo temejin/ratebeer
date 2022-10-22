@@ -4,21 +4,13 @@ class Brewery < ApplicationRecord
   has_many :beers, dependent: :destroy
   has_many :ratings, through: :beers
 
-  validate :validate_year
+  validate :year_not_greater_than_current
   validates :name, presence: true
+  validates :year, numericality: { greater_than_or_equal_to: 1040,
+                                   only_integer: true }
 
-  def validate_year
-    if !year
-      errors.add(:year, "can't be blank")
-    elsif year.is_a? Integer
-      if year > Time.now.year
-        errors.add(:year, "cannot be in the future")
-      elsif year < 1040
-        errors.add(:year, "must be greater than or equal to 1040")
-      end
-    else
-      errors.add(:year, "must be an integer between 1040 and #{Time.now.year}")
-    end
+  def year_not_greater_than_current
+    errors.add(:year, "can't be greater than current year") if year > Time.now.year
   end
 
   def print_report

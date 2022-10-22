@@ -1,5 +1,6 @@
 class MembershipsController < ApplicationController
   before_action :set_membership, only: %i[show edit update destroy]
+  before_action :set_clubs, only: %i[new edit create]
 
   # GET /memberships or /memberships.json
   def index
@@ -13,7 +14,6 @@ class MembershipsController < ApplicationController
   # GET /memberships/new
   def new
     @membership = Membership.new
-    @clubs = BeerClub.all.reject { |club| current_user.clubs.include? club }
   end
 
   # GET /memberships/1/edit
@@ -64,6 +64,11 @@ class MembershipsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_membership
     @membership = Membership.find(params[:id])
+  end
+
+  def set_clubs
+    membership_of_current = current_user.memberships.map(&:beer_club)
+    @clubs = BeerClub.where.not(id: membership_of_current)
   end
 
   # Only allow a list of trusted parameters through.

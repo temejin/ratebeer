@@ -1,18 +1,3 @@
-<h1>New membership</h1>
+<h1>Join a club</h1>
 
-<%= form_for(@membership) do |f| %>
-
-  <% if !@clubs.empty? %>
-    Select a club to join:
-    <%= f.select :beer_club_id, options_from_collection_for_select(@clubs, :id, :to_s) %>
-    <%= f.submit %>
-  <% else %>
-    No available clubs to join!
-  <% end%>
-<% end %>
-
-<br>
-
-<div>
-  <%= link_to "Back to memberships", memberships_path %>
-</div>
+<%= render "form", membership: @membership %>
