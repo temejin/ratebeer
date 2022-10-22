@@ -10,7 +10,7 @@
 </ul>
 
 <%= @user.username %>
-as made <%= @user.ratings.count %> ratings, average rating <%= @user.average_rating %>
+has made <%= @user.ratings.count %> ratings, average rating <%= @user.average_rating %>
 
 <ul>
   <% @user.ratings.each do |rating| %>
@@ -26,8 +26,8 @@ as made <%= @user.ratings.count %> ratings, average rating <%= @user.average_rat
 
 
 <div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-
-  <%= button_to "Destroy this user", @user, method: :delete %>
+  <% if @user == current_user %>
+    <%= link_to "Edit this user", edit_user_path(@user) %>
+    <%= button_to "Destroy this user", @user, method: :delete %>
+  <% end %>
 </div>

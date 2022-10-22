@@ -13,7 +13,7 @@ class RatingsController < ApplicationController
     @rating.user = current_user
 
     if @rating.save
-      redirect_to user_path current_cuser
+      redirect_to user_path current_user
     else
       @beers = Beer.all
       render :new, status: :unprocessable_entity
