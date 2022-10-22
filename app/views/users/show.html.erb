@@ -14,8 +14,11 @@ as made <%= @user.ratings.count %> ratings, average rating <%= @user.average_rat
 
 <ul>
   <% @user.ratings.each do |rating| %>
-    <% beer = Beer.find_by id: rating.beer_id %>
-    <li><%= beer.name %> <%= rating.score %> <%= link_to 'Delete', rating, data: { "turbo-method": :delete }, class: "link-secondary smooth"  %></li>
+    <li><%= "#{rating.to_s}" %> 
+      <% if @user == current_user %>
+        <%= link_to 'Delete', rating, data: { "turbo-method": :delete } %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 
