@@ -6,6 +6,9 @@ class Beer < ApplicationRecord
   has_many :raters, -> { distinct }, through: :ratings, source: :user
 
   validates :name, presence: true
+  validates :brewery, presence: true
+  validates :style, presence: true
+
 
   def average
     # code here
