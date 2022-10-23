@@ -9,7 +9,6 @@ class Beer < ApplicationRecord
   validates :brewery, presence: true
   validates :style, presence: true
 
-
   def average
     # code here
     return 0 if ratings.empty?

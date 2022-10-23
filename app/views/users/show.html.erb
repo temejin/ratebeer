@@ -2,6 +2,11 @@
 <h2>Username:</h2>
 <p> <%= @user.username %> </p>
 
+<% if @user.favorite_style %>
+  <p><strong>Favourite style:</strong> <%= @user.favorite_style%></p>
+  <p><strong>Favourite brewery:</strong>  <%= @user.favorite_brewery.name %></p>
+<% end %>
+
 <%= @user.username %> is a member of <%= @user.clubs.count %> clubs:
 <ul>
   <% @user.clubs.each do |c| %>
