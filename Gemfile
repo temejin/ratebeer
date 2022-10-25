@@ -76,6 +76,7 @@ group :test do
   gem "webdrivers"
   gem 'rspec-rails', '~> 6.0.0.rc1'
   gem 'factory_bot_rails'
+  gem 'launchy'
 end
 
 group :development, :test do
