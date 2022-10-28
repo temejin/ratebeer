@@ -200,7 +200,7 @@
           1,
           null,
           1,
-          99,
+          105,
           null,
           65,
           null,
@@ -487,6 +487,62 @@
           null
         ]
       },
+      "/home/sunteemu/Koulut/HY/WebPalvelinohjelmointi/ratebeer/lib/beermapping_api.rb": {
+        "lines": [
+          1,
+          1,
+          9,
+          15,
+          null,
+          null,
+          1,
+          6,
+          null,
+          6,
+          6,
+          6,
+          null,
+          4,
+          4,
+          6,
+          null,
+          null,
+          null,
+          1,
+          6,
+          0,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/sunteemu/Koulut/HY/WebPalvelinohjelmointi/ratebeer/app/models/place.rb": {
+        "lines": [
+          1,
+          1,
+          6,
+          null,
+          null
+        ]
+      },
+      "/home/sunteemu/Koulut/HY/WebPalvelinohjelmointi/ratebeer/app/controllers/places_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          3,
+          3,
+          1,
+          null,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/sunteemu/Koulut/HY/WebPalvelinohjelmointi/ratebeer/app/controllers/ratings_controller.rb": {
         "lines": [
           1,
@@ -725,6 +781,6 @@
         }
       }
     },
-    "timestamp": 1666717808
+    "timestamp": 1666941782
   }
 }
