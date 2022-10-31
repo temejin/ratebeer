@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :style, style: "display: block" %>
-    <%= form.select :style, options_for_select(@styles, @beer.style) %>
+    <%= form.select :style_id, options_from_collection_for_select(@styles, :id, :name, @beer.style_id) %>
   </div>
 
   <div>
