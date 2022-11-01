@@ -12,7 +12,7 @@ FactoryBot.define do
 
   factory :beer do
     name { "anonymous" }
-    style { "Lager" }
+    style
     brewery # luodaan tehtaalla
   end
 
@@ -20,5 +20,10 @@ FactoryBot.define do
     score { 10 }
     beer # luodaan tehtaalla
     user # luodaan tehtaalla
+  end
+
+  factory :style do
+    name { "Lager" }
+    description { "Common lager" }
   end
 end

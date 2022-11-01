@@ -31,6 +31,12 @@
           null
         ]
       },
+      "/home/sunteemu/Koulut/HY/WebPalvelinohjelmointi/ratebeer/app/helpers/styles_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/home/sunteemu/Koulut/HY/WebPalvelinohjelmointi/ratebeer/app/helpers/users_helper.rb": {
         "lines": [
           1,
@@ -42,6 +48,7 @@
           1,
           1,
           null,
+          1,
           1,
           1,
           1,
@@ -111,15 +118,15 @@
           22,
           null,
           15,
-          32,
-          32,
+          52,
+          52,
           null,
           null,
           1,
-          78,
-          17,
-          17,
-          17,
+          156,
+          37,
+          37,
+          37,
           null,
           null,
           1,
@@ -153,7 +160,7 @@
           null,
           null,
           1,
-          48,
+          49,
           null,
           null,
           1,
@@ -166,6 +173,13 @@
           0,
           0,
           null,
+          null
+        ]
+      },
+      "/home/sunteemu/Koulut/HY/WebPalvelinohjelmointi/ratebeer/app/models/style.rb": {
+        "lines": [
+          1,
+          1,
           null
         ]
       },
@@ -780,6 +794,83 @@
         "branches": {
         }
       },
+      "/home/sunteemu/Koulut/HY/WebPalvelinohjelmointi/ratebeer/app/controllers/styles_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/home/sunteemu/Koulut/HY/WebPalvelinohjelmointi/ratebeer/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -804,6 +895,6 @@
         }
       }
     },
-    "timestamp": 1667045657
+    "timestamp": 1667335747
   }
 }

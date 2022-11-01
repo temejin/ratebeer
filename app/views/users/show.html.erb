@@ -3,7 +3,7 @@
 <p> <%= @user.username %> </p>
 
 <% if @user.favorite_style %>
-  <p><strong>Favourite style:</strong> <%= @user.favorite_style%></p>
+  <p><strong>Favourite style:</strong> <%= @user.favorite_style.name%></p>
   <p><strong>Favourite brewery:</strong>  <%= @user.favorite_brewery.name %></p>
 <% end %>
 

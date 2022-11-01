@@ -66,7 +66,7 @@ describe "User" do
     end
 
     it "has their favourite style and brewery displayed" do
-      expect(page).to have_content("Favourite style: #{@user.favorite_style}")
+      expect(page).to have_content("Favourite style: #{@user.favorite_style.name}")
       expect(page).to have_content("Favourite brewery: #{@user.favorite_brewery.name}")
     end
   end

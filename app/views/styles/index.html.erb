@@ -5,10 +5,9 @@
 <div id="styles">
   <% @styles.each do |style| %>
     <%= render style %>
-    <p>
-      <%= link_to "Show this style", style %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to "New style", new_style_path %>
+<% if current_user %>
+  <%= link_to "New style", new_style_path %>
+<% end %>
