@@ -12,6 +12,7 @@ on:
     branches: [ "main" ]
 env:
   BEERMAPPING_APIKEY: ${{ secrets.BEERMAPPING_APIKEY }}
+  WEATHERSTACK_APIKEY: ${{ secrets.WEATHERSTACK_APIKEY }}
 jobs:
   test:
     runs-on: ubuntu-22.04

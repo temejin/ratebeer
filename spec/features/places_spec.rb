@@ -5,6 +5,9 @@ describe "Places" do
     allow(BeermappingApi).to receive(:places_in).with("kumpula").and_return(
       [Place.new(name: "Oljenkorsi", id:1)]
     )
+    allow(WeatherstackApi).to receive(:weather_in).with("kumpula").and_return(
+      Weather.new(temperature: 20, wind_speed: 3, wind_dir: "SE", weather_icons: "")
+    )
 
     visit places_path
     fill_in('city', with: 'kumpula')
@@ -21,6 +24,9 @@ describe "Places" do
       allow(BeermappingApi).to receive(:places_in).with("kumpula").and_return(
           places << Place.new(name: name, id: id)
       )
+      allow(WeatherstackApi).to receive(:weather_in).with("kumpula").and_return(
+        Weather.new(temperature: 20, wind_speed: 3, wind_dir: "SE", weather_icons: "")
+      )
       id += 1
     end
 
@@ -35,6 +41,9 @@ describe "Places" do
 
   it "if none are found, and appropriate message is shown" do
     allow(BeermappingApi).to receive(:places_in).with("ankkalinna").and_return([])
+    allow(WeatherstackApi).to receive(:weather_in).with("ankkalinna").and_return(
+      nil
+    )
     visit places_path
     fill_in('city', with: 'ankkalinna')
     click_button "Search"
