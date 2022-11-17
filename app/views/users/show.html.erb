@@ -31,7 +31,7 @@ has made <%= @user.ratings.count %> ratings, average rating <%= @user.average_ra
 
 <div>
   <% if @user == current_user %>
-    <%= link_to "Edit this user", edit_user_path(@user) %>
-    <%= button_to "Destroy this user", @user, method: :delete %>
+    <%= link_to "Edit this user", edit_user_path(@user), class:"btn btn-primary" %>
+    <%= button_to "Destroy this user", @user, method: :delete, class:"btn btn-danger" %>
   <% end %>
 </div>

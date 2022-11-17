@@ -13,17 +13,17 @@
     <%= form_with(url: membership_path(@membership), method: :delete) do |form| %>
       <%= form.hidden_field :beer_club_id, value: @beer_club.id %>
       <%= form.hidden_field :user_id, value: current_user.id %>
-      <%= form.submit "End the membership" %>
+      <%= form.submit "End the membership", class:"btn btn-primary" %>
     <% end %>
   <% else %>
     <%= form_with(model: @membership) do |form| %>
       <%= form.hidden_field :beer_club_id, value: @beer_club.id %>
       <%= form.hidden_field :user_id, value: current_user.id %>
-      <%= form.submit "Join this club" %>
+      <%= form.submit "Join this club", class:"btn btn-primary" %>
     <% end %>
   <% end %>
   <div>
-    <%= link_to "Edit this beer club", edit_beer_club_path(@beer_club) %> 
-    <%= button_to "Destroy this beer club", @beer_club, method: :delete %>
+    <%= link_to "Edit this beer club", edit_beer_club_path(@beer_club), class:"btn btn-info" %> 
+    <%= button_to "Destroy this beer club", @beer_club, method: :delete, class:"btn btn-danger" %>
   </div>
 <% end %>
