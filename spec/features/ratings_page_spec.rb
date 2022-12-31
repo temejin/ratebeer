@@ -18,7 +18,7 @@ describe "Rating" do
     fill_in('rating[score]', with: '15')
 
     expect{
-      click_button "Create Rating"
+      click_button "Create rating"
     }.to change{Rating.count}.from(0).to(1)
 
     expect(user.ratings.count).to eq(1)
