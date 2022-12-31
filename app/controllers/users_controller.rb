@@ -61,6 +61,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def toggle_status
+    user = User.find(params[:id])
+    user.update_attribute :closed, (not user.closed)
+
+    new_status = user.closed? ? "closed" : "not closed"
+
+    redirect_to user, notice: "User status changed to #{new_status}"
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

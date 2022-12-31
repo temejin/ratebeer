@@ -3,5 +3,10 @@
     <strong>Username:</strong>
     <%= user.username %>
   </p>
+  <% if current_user and current_user.admin %>
+    <% if user.closed %>
+      <span class="badge bg-primary">closed</span>
+    <%end %>
+  <% end %>
 
 </div>

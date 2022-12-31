@@ -6,6 +6,13 @@
   <p><strong>Favourite brewery:</strong>  <%= @user.favorite_brewery.name %></p>
 <% end %>
 
+<% if current_user and current_user.admin %>
+  <% if @user.closed %>
+    <span class="badge bg-primary">closed</span>
+  <%end%>
+  <%= link_to "Change account status", toggle_status_user_path(@user.id), data: {turbo_method: "post"}, class: "btn btn-primary" %>
+<% end %>
+
 <%= @user.username %> is a member of <%= @user.clubs.count %> clubs:
 <ul>
   <% @user.clubs.each do |c| %>
@@ -14,7 +21,7 @@
 </ul>
 
 <%= @user.username %>
-has made <%= @user.ratings.count %> ratings, average rating <%= @user.average_rating %>
+has made <%= @user.ratings.count %> ratings, average rating <%= round @user.average_rating %>
 
 <ul>
   <% @user.ratings.each do |rating| %>

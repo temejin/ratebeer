@@ -10,6 +10,7 @@ describe "Rating" do
 
   before :each do
     sign_in(username: "Pekka", password: "Foobar1")
+    visit ratings_path
   end
 
   it "when given, is registered to the beer and user who is signed in" do
@@ -26,16 +27,32 @@ describe "Rating" do
     expect(beer1.average_rating).to eq(15.0)
   end
 
-  it "displays ratings in database" do
+  it "displays recent ratings" do
     scores = [10, 15, 11]
     scores.each do |score|
       FactoryBot.create(:rating, score: score, user: user)
     end
     visit ratings_path
-    expect(page).to have_content "Total ratings: 3"
+    expect(page).to have_content "Recent ratings"
     scores.each do |score|
       expect(page).to have_content "#{score}"
     end
+  end
+
+  it "displays top beers" do
+    expect(page).to have_content "Top beers"
+  end
+
+  it "displays top breweries" do
+    expect(page).to have_content "Top breweries"
+  end
+
+  it "displays top styles" do
+    expect(page).to have_content "Top styles"
+  end
+
+  it "displays most active users" do
+    expect(page).to have_content "Most active users"
   end
 end
 
