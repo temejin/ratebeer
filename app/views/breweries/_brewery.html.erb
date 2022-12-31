@@ -15,7 +15,7 @@
   </p>
   <% if brewery.ratings.empty? %>
   <% else %>
-  This brewery's beers have <%= pluralize(brewery.ratings.count, 'rating') %> with an average rating of <%= brewery.average_rating %>
+  This brewery's beers have <%= pluralize(brewery.ratings.count, 'rating') %> with an average rating of <%= round brewery.average_rating %>
   <% end %>
 
 </div>
