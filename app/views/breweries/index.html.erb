@@ -1,20 +1,18 @@
 <h1>Breweries</h1>
-<p>Listing breweries</p>
-<p>Number of breweries: <%= @breweries.count %></p>
+<h2> Active </h2>
+<p>Number of active breweries: <%= @active_breweries.count %></p>
 
 <div id="breweries">
-  <% @breweries.each do |brewery| %>
-    <div id="<%= dom_id brewery %>">
-      <p>
-        <%= link_to brewery.name, brewery %>
-      </p>
+  <% @active_breweries.each do |brewery| %>
+    <%= render brewery %>
+  <% end %>
+</div>
 
-      <p>
-        <strong>Year:</Strong>
-        <%= brewery.year %>
-      </p>
-    </div>
-
+<h2>Retired</h2>
+<p>Number of retired breweries: <%= @retired_breweries.count %></p>
+<div id="retired_breweries">
+  <% @retired_breweries.each do |brewery| %>
+    <%= render brewery %>
   <% end %>
 </div>
 

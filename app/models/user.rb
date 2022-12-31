@@ -49,4 +49,13 @@ class User < ApplicationRecord
     avg = scores.sum / scores.count
     [brewery, avg]
   end
+
+  def amount_of_ratings
+    ratings.count
+  end
+
+  def self.most_active(n)
+    User.all.sort_by(&:amount_of_ratings).reverse.take(n)
+  end
+
 end
