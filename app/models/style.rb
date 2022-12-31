@@ -4,7 +4,7 @@ class Style < ApplicationRecord
   has_many :beers
   has_many :ratings, through: :beers
 
-  def self.top(n)
-    Style.all.sort_by(&:average_rating).reverse.take(n)
+  def self.top(number)
+    Style.all.sort_by(&:average_rating).reverse.take(number)
   end
 end

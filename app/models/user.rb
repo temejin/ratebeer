@@ -54,8 +54,7 @@ class User < ApplicationRecord
     ratings.count
   end
 
-  def self.most_active(n)
-    User.all.sort_by(&:amount_of_ratings).reverse.take(n)
+  def self.most_active(number)
+    User.all.sort_by(&:amount_of_ratings).reverse.take(number)
   end
-
 end
